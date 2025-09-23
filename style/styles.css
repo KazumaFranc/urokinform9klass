@@ -1,0 +1,376 @@
+:root {
+    --neon-blue: #0ff;
+    --neon-pink: #f0f;
+    --neon-red: #f00;
+    --dark-bg: #0a0a12;
+    --darker-bg: #050508;
+    --text-color: #e0e0ff;
+    --glow: 0 0 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image:
+            radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 0%, transparent 20%),
+            radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 20%);
+}
+
+.cyber-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 1px solid var(--neon-blue);
+    position: relative;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: var(--glow) var(--neon-blue);
+    animation: pulse 3s infinite alternate;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--neon-pink);
+    text-shadow: var(--glow) var(--neon-pink);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    color: var(--text-color);
+    padding: 10px 20px;
+    margin: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: var(--neon-blue);
+    color: var(--dark-bg);
+    box-shadow: var(--glow) var(--neon-blue);
+}
+
+section {
+    display: none;
+    padding: 30px;
+    margin: 20px 0;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 5px;
+    background-color: rgba(10, 10, 20, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+section.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+h2 {
+    color: var(--neon-blue);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--neon-blue);
+    padding-bottom: 10px;
+    text-shadow: var(--glow) var(--neon-blue);
+}
+
+h3 {
+    color: var(--neon-pink);
+    margin: 15px 0 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+.interactive-box {
+    background-color: var(--darker-bg);
+    border: 1px solid var(--neon-pink);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: var(--glow) var(--neon-pink);
+}
+
+.graph-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.graph-node {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--dark-bg);
+    border: 2px solid var(--neon-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.graph-node:hover {
+    transform: scale(1.1);
+    box-shadow: var(--glow) var(--neon-blue);
+}
+
+.graph-edge {
+    position: absolute;
+    height: 2px;
+    background-color: var(--neon-pink);
+    transform-origin: 0 0;
+}
+
+.joke-box {
+    background-color: rgba(255, 0, 255, 0.1);
+    border-left: 3px solid var(--neon-pink);
+    padding: 15px;
+    margin: 20px 0;
+    font-style: italic;
+}
+
+.matrix-code {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--neon-blue);
+    font-size: 0.9rem;
+    color: rgba(224, 224, 255, 0.7);
+}
+
+/* Стили для мегающей красной кнопки */
+.emergency-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ff0000, #cc0000);
+    border: 3px solid #fff;
+    box-shadow:
+            0 0 20px var(--neon-red),
+            inset 0 0 20px rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    animation: blink 1.5s infinite alternate, pulse-red 2s infinite;
+    transition: all 0.3s;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+    line-height: 1.2;
+    padding: 10px;
+}
+
+.emergency-button:hover {
+    transform: scale(1.1);
+    box-shadow:
+            0 0 30px var(--neon-red),
+            inset 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.emergency-button:active {
+    transform: scale(0.95);
+    box-shadow:
+            0 0 10px var(--neon-red),
+            inset 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.emergency-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.emergency-panel.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.emergency-content {
+    background-color: var(--darker-bg);
+    border: 3px solid var(--neon-red);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 0 30px var(--neon-red);
+    transform: scale(0.8);
+    transition: transform 0.5s;
+}
+
+.emergency-panel.active .emergency-content {
+    transform: scale(1);
+}
+
+.emergency-content h2 {
+    color: var(--neon-red);
+    border-bottom: 1px solid var(--neon-red);
+    text-shadow: 0 0 10px var(--neon-red);
+}
+
+.close-panel {
+    background-color: var(--neon-red);
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.close-panel:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+/* Стили для сообщения "9 КЛАСС УЧИТЕ ПАРАГРАФЫ" */
+.warning-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.warning-message.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.warning-text {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 20px #000, 0 0 30px #ff0000;
+    animation: text-pulse 1s infinite alternate;
+    line-height: 1.2;
+    padding: 20px;
+    border: 5px solid #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 90%;
+}
+
+@keyframes text-pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 20px var(--neon-red); }
+    50% { box-shadow: 0 0 40px var(--neon-red); }
+    100% { box-shadow: 0 0 20px var(--neon-red); }
+}
+
+@keyframes pulse {
+    0% { text-shadow: 0 0 10px var(--neon-blue); }
+    100% { text-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .graph-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .emergency-button {
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        right: 10px;
+        font-size: 0.7rem;
+    }
+
+    .warning-text {
+        font-size: 2.5rem;
+    }
+}
