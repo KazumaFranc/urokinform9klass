@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Графические информационные модели | Киберпанк-урок</title>
+  <link rel="stylesheet" href="style/styles.css">
+</head>
+<body>
+<div class="matrix-code" id="matrixEffect"></div>
+
+<!-- Аудио элемент для воспроизведения звука -->
+<audio id="warningSound" preload="auto">
+  <!-- ВАЖНО: Добавьте файл sound.mp3 в ту же папку, что и этот HTML файл -->
+  <source src="sound.mp3" type="audio/mpeg">
+  Ваш браузер не поддерживает аудио элемент.
+</audio>
+
+<!-- Мегающая красная кнопка -->
+<div class="emergency-button" id="emergencyButton">
+  9 КЛАСС
+</div>
+
+<!-- Сообщение "9 КЛАСС УЧИТЕ ПАРАГРАФЫ" -->
+<div class="warning-message" id="warningMessage">
+  <div class="warning-text">
+    9 КЛАСС УЧИТЕ ПАРАГРАФЫ,<br>БУДУ БИТЬ ПО ЖОПЕ
+  </div>
+</div>
+
+<!-- Панель, которая появляется при нажатии на кнопку -->
+<div class="emergency-panel" id="emergencyPanel">
+  <div class="emergency-content">
+    <h2>СИСТЕМА АКТИВИРОВАНА</h2>
+    <p>Уровень доступа: <strong>9 КЛАСС</strong></p>
+    <p>Режим: <strong>КИБЕРПАНК-ОБУЧЕНИЕ</strong></p>
+    <p>Доступ к расширенным материалам по графическим информационным моделям разрешен.</p>
+    <p>Инициализация интерактивных модулей...</p>
+    <button class="close-panel" id="closePanel">ПРИНЯТЬ</button>
+  </div>
+</div>
+
+<div class="cyber-container">
+  <header>
+    <h1>Графические информационные модели</h1>
+    <p class="subtitle">Киберпанк-урок по информатике</p>
+  </header>
+
+  <nav>
+    <button class="nav-btn active" data-target="intro">Введение</button>
+    <button class="nav-btn" data-target="variety">Многообразие моделей</button>
+    <button class="nav-btn" data-target="graphs">Графы</button>
+    <button class="nav-btn" data-target="solving">Решение задач</button>
+    <button class="nav-btn" data-target="interactive">Интерактив</button>
+  </nav>
+
+  <section id="intro" class="active">
+    <h2>Введение в графические информационные модели</h2>
+    <p>Графические информационные модели — это способ представления информации в виде изображений, схем, графиков и других визуальных форм. В цифровую эпоху такие модели стали особенно важны для обработки больших объемов данных.</p>
+
+    <div class="interactive-box">
+      <h3>Киберпанк-факт</h3>
+      <p>В мире киберпанка графические модели используются для визуализации нейронных связей, маршрутов данных в сетях и даже для отображения виртуальных ландшафтов.</p>
+    </div>
+
+    <div class="joke-box">
+      <p>Почему программисты предпочитают темные темы? Потому что свет привлекает баги!</p>
+    </div>
+  </section>
+
+  <section id="variety">
+    <h2>Многообразие графических информационных моделей</h2>
+    <p>Графические модели бывают разных видов:</p>
+    <ul>
+      <li><strong>Схемы</strong> - показывают структуру объектов и связи между ними</li>
+      <li><strong>Графики</strong> - отображают изменение величин во времени</li>
+      <li><strong>Диаграммы</strong> - визуализируют соотношения между частями целого</li>
+      <li><strong>Карты</strong> - представляют пространственную информацию</li>
+      <li><strong>Чертежи</strong> - точные изображения технических объектов</li>
+    </ul>
+
+    <div class="interactive-box">
+      <h3>Интерактив: Определи тип модели</h3>
+      <p>Попробуй определить, к какому типу относится каждая модель:</p>
+      <div id="model-quiz">
+        <button class="quiz-option" data-type="scheme">Схема</button>
+        <button class="quiz-option" data-type="graph">График</button>
+        <button class="quiz-option" data-type="diagram">Диаграмма</button>
+        <button class="quiz-option" data-type="map">Карта</button>
+        <button class="quiz-option" data-type="drawing">Чертеж</button>
+      </div>
+      <p id="quiz-result"></p>
+    </div>
+  </section>
+
+  <section id="graphs">
+    <h2>Графы</h2>
+    <p>Граф — это совокупность вершин (узлов) и соединяющих их ребер (дуг). Графы широко используются для моделирования сетей, маршрутов, иерархий и многих других структур.</p>
+
+    <h3>Основные понятия:</h3>
+    <ul>
+      <li><strong>Вершина (узел)</strong> - основной элемент графа</li>
+      <li><strong>Ребро (дуга)</strong> - связь между вершинами</li>
+      <li><strong>Взвешенный граф</strong> - граф, где ребрам присвоены числовые значения (веса)</li>
+      <li><strong>Ориентированный граф</strong> - граф, где ребра имеют направление</li>
+    </ul>
+
+    <div class="interactive-box">
+      <h3>Построй свой граф</h3>
+      <p>Нажми на узлы, чтобы соединить их:</p>
+      <div class="graph-container" id="graph-builder">
+        <div class="graph-node" data-id="1">A</div>
+        <div class="graph-node" data-id="2">B</div>
+        <div class="graph-node" data-id="3">C</div>
+        <div class="graph-node" data-id="4">D</div>
+        <div class="graph-node" data-id="5">E</div>
+      </div>
+      <button id="clear-graph">Очистить граф</button>
+    </div>
+
+    <div class="joke-box">
+      <p>Граф заходит в бар. Бармен говорит: "У нас есть ребра, но нет вершин!"</p>
+    </div>
+  </section>
+
+  <section id="solving">
+    <h2>Использование графов при решении задач</h2>
+    <p>Графы помогают решать различные задачи:</p>
+    <ul>
+      <li><strong>Задача коммивояжера</strong> - найти кратчайший маршрут через все города</li>
+      <li><strong>Поиск пути</strong> - найти оптимальный путь между двумя точками</li>
+      <li><strong>Анализ социальных сетей</strong> - изучение связей между пользователями</li>
+      <li><strong>Планирование проектов</strong> - определение последовательности задач</li>
+    </ul>
+
+    <div class="interactive-box">
+      <h3>Задача: Найди кратчайший путь</h3>
+      <p>Попробуй найти кратчайший путь от точки A до точки E:</p>
+      <div class="graph-container" id="shortest-path">
+        <div class="graph-node" data-id="1">A</div>
+        <div class="graph-node" data-id="2">B (3)</div>
+        <div class="graph-node" data-id="3">C (2)</div>
+        <div class="graph-node" data-id="4">D (4)</div>
+        <div class="graph-node" data-id="5">E</div>
+      </div>
+      <p>Цифры в скобках - вес ребра. Попробуй найти путь с наименьшим общим весом!</p>
+      <button id="show-solution">Показать решение</button>
+      <p id="path-solution"></p>
+    </div>
+  </section>
+
+  <section id="interactive">
+    <h2>Интерактивная зона</h2>
+    <p>Здесь ты можешь поэкспериментировать с графическими моделями:</p>
+
+    <div class="interactive-box">
+      <h3>Генератор случайных графов</h3>
+      <p>Сгенерируй случайный граф и попробуй найти в нем закономерности:</p>
+      <button id="generate-graph">Сгенерировать граф</button>
+      <div class="graph-container" id="random-graph"></div>
+    </div>
+
+    <div class="interactive-box">
+      <h3>Цветовая палитра киберпанка</h3>
+      <p>Поэкспериментируй с цветами, характерными для киберпанк-стиля:</p>
+      <div id="color-picker">
+        <input type="color" id="neon-color" value="#00ffff">
+        <button id="apply-color">Применить цвет</button>
+      </div>
+      <p id="color-demo">Этот текст изменит цвет согласно выбранному значению</p>
+    </div>
+
+    <div class="joke-box">
+      <p>Почему графы не играют в прятки? Потому что их всегда можно найти по связям!</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Помни: в мире данных красота в визуализации!</p>
+  </footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
